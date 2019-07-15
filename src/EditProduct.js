@@ -27,6 +27,7 @@ class EditProduct extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
+
 		var { name, weight, availability, productUrl, pricingTier, priceRange } = this.state;
 		var data = {
 			name,
@@ -51,13 +52,13 @@ class EditProduct extends Component {
 	render() {
 		var { name, weight, productUrl, pricingTier, priceRange } = this.state;
 		var price = this.state.pricingTier ? this.props.pricing[this.state.pricingTier] : [] ;
-		 
+		
 
 		return(
 			<div>
 				<form className='edit-form'>
 					<input className='input' onChange={this.handleChange} 
-					type='text' name='name' placeholder='enter product name'></input>
+					type='text' name='name' placeholder='enter product name' ></input>
 					<input className='input' onChange={this.handleChange} 
 					type='number' name='weight' placeholder='enter the weight'></input>
 					<input className='input' onChange={this.handleChange} 
